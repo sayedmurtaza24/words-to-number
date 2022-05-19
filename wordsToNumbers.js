@@ -1,19 +1,3 @@
-const examples = [
-    "twenty two", // 22
-    "twenty", // 20
-    "one hundred and forty two", // 142
-    "one hundred and eleven", // 111
-    "three thousand five hundred", // 3,500
-    "three thousand five hundred and seventy two", // 3,572
-    "three thousand five hundred and ten", // 3,510
-    "three hundred thousand six hundred", // 300,600
-    "three hundred thousand six hundred and eleven", // 300,611
-    "three hundred eleven thousand six hundred and twenty-two", // 311,622
-    "five hundred million three hundred thousand and twenty", // 500,300,020
-    "five hundred forty two million three hundred thousand and twenty", // 542,300,020
-    "five hundred million three hundred thirty two thousand one hundred twenty", // 500,332,120
-]
-
 const convertToNumber = word => {
     const a = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
     const b = a.concat(['ten', 'eleven', 'twelve', 'thir$', 'four$', 'fif$', 'six$', 'seven$', 'eigh$', 'nine$']
@@ -29,5 +13,3 @@ const convertToNumber = word => {
             ? n : Math.abs(`${n}`.length - `${arr[i - 1]}`.length) > 1 || n === 1000
                 ? ac * n : ac + n, 0), 0)
 }
-
-examples.forEach(n => console.log(convertToNumber(n)))
