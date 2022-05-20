@@ -6,12 +6,14 @@ written numbers in words from english language to actual numbers.
 
 ## Features to be added
 * Add support for many languages
-* Add support for more numbers (currently upto trillions only)
+* Add support for more numbers (currently upto quintillions only)
 * Optimize even more!
 * Make it an actual module
 * What else you think?
 
 ## Supported inputs
+I used Short American form [here](https://simple.wikipedia.org/wiki/Names_for_large_numbers)
+but changing it european wouldn't be so hard! ;)
 Example of supported inputs to the function are:
 * twenty two
 * twenty
