@@ -1,16 +1,15 @@
-const convertToNumber = word => {
-    const a = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'],
-        b = a.concat(['ten', 'eleven', 'twelve', 'thir.', 'four.', 'fif.', 'six.', 'seven.', 'eigh.', 'nine.']
-            .map(x => x.replace('.', 'teen'))),
-        c = { twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, seventy: 70, eighty: 80, ninety: 90 },
-        z = { quint$: 18, quadr$: 15, tr$: 12, b$: 9, m$: 6, thousand: 3, hundred: 2, o: 1 },
-        df = (x, y, i) => i !== 0 && (Math.abs(`${x}`.length - `${y}`.length) > 1 || x === 1000),
-        split = word.toLowerCase().split(/-|\s+and\s+|\s+/gi);
-    return Object.keys(z).reduce((a, k) => a + split
-        .splice(0, k === 'o' ? split.length : split.indexOf(k.replace(/\$/, 'illion')) + 1)
-        .map(w => !b.includes(w) ? c[w] ?? 10 ** z[w.replace(/illion$/, '$')] : b.indexOf(w))
-        .reduce((ac, n, i, arr) => df(n, arr[i - 1], i) ? ac * n : ac + n, 0), 0, '');
-}
+const convertToNumber = (word, { b, c, z, df, sp } = {
+    b: ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine',
+        'ten', 'eleven', 'twelve', 'thir!', '4!', 'fif!', '6!', '7!', 'eigh!', '9!']
+        .map((_, __, $) => _.replace(/!|[4679]/g, r => $[r] ?? 'teen')),
+    c: { twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, seventy: 70, eighty: 80, ninety: 90 },
+    z: { quint$: 18, quadr$: 15, tr$: 12, b$: 9, m$: 6, thousand: 3, hundred: 2, o: 1 },
+    df: (x, y, i) => i !== 0 && (Math.abs(`${x}`.length - `${y}`.length) > 1 || x === 1000),
+    sp: word.toLowerCase().split(/-|\s+and\s+|\s+/gi)
+}) => Object.keys(z).reduce((acc, k) => acc + sp
+    .splice(0, k === 'o' ? sp.length : sp.indexOf(k.replace(/\$/, 'illion')) + 1)
+    .map(w => !b.includes(w) ? c[w] ?? 10 ** z[w.replace(/illion$/, '$')] : b.indexOf(w))
+    .reduce((ac, n, i, arr) => df(n, arr[i - 1], i) ? ac * n : ac + n, 0), 0, '');
 
 const examples = [
     ["twenty two", 22],
@@ -19,7 +18,7 @@ const examples = [
     ["one hundred and eleven", 111],
     ["three thousand five hundred", 3500],
     ["three thousand five hundred and seventy two", 3572],
-    ["three thousand five hundred and ten", 3510],
+    ["three thousand five hundred and fourteen", 3514],
     ["three hundred thousand six hundred", 300600],
     ["three hundred thousand six hundred and eleven", 300611],
     ["three hundred eleven thousand six hundred and twenty-two", 311622],
