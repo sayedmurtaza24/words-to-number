@@ -3,7 +3,7 @@ const convertToNumber = word => {
     const b = a.concat(['ten', 'eleven', 'twelve', 'thir$', 'four$', 'fif$', 'six$', 'seven$', 'eigh$', 'nine$']
         .map(x => x.replace("$", "teen")));
     const c = { twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, seventy: 70, eighty: 80, ninety: 90 };
-    const z = { billion: 9, million: 6, thousand: 3, hundred: 2, o: 1 };
+    const z = { quintillion: 18, quadrillion: 15, trillion: 12, billion: 9, million: 6, thousand: 3, hundred: 2, o: 1 };
 
     const split = word.toLowerCase().split(/[ -]/g).filter(w => w != 'and');
     return Object.keys(z).reduce((a, k) => a + split
