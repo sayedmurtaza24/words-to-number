@@ -14,6 +14,7 @@ written numbers in words from english language to actual numbers.
 ## Supported inputs
 I used the _Short American_ form [here](https://simple.wikipedia.org/wiki/Names_for_large_numbers)
 but changing it european wouldn't be so hard! ;)
+
 Example of supported inputs to the function are:
 * twenty two
 * twenty
