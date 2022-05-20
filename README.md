@@ -12,7 +12,7 @@ written numbers in words from english language to actual numbers.
 * What else you think?
 
 ## Supported inputs
-I used Short American form [here](https://simple.wikipedia.org/wiki/Names_for_large_numbers)
+I used the _Short American_ form [here](https://simple.wikipedia.org/wiki/Names_for_large_numbers)
 but changing it european wouldn't be so hard! ;)
 Example of supported inputs to the function are:
 * twenty two
