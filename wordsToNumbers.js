@@ -8,7 +8,7 @@ const convertToNumber = (word, { b, c, z, df, sp } = {
         'ten', 'eleven', 'twelve', 'thir!', '4!', 'fif!', '6!', '7!', 'eigh!', '9!']
         .map((_, __, $) => _.replace(/!|[4679]/g, r => $[r] ?? 'teen')),
     c: { twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60, seventy: 70, eighty: 80, ninety: 90 },
-    z: { sext$: 21, quint$: 18, quadr$: 15, tr$: 12, b$: 9, m$: 6, thousand: 3, hundred: 2, o: 0 },
+    z: { sept$: 24, sext$: 21, quint$: 18, quadr$: 15, tr$: 12, b$: 9, m$: 6, thousand: 3, hundred: 2, o: 0 },
     df: (x, y, i) => i !== 0 && (Math.abs(`${x}`.length - `${y}`.length) > 1 || x === 1000),
     sp: word.toLowerCase().split(/-|\s+and\s+|\s+/gi)
 }) => Object.keys(z).reduce((acc, k) => acc + sp
