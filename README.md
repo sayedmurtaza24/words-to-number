@@ -6,13 +6,13 @@ written numbers in words from english language to actual numbers.
 
 ## Features to be added
 * Add support for many languages
-* Add support for more numbers (currently upto quintillions only)
+* Add support for more numbers (currently upto septillions only!)
 * Optimize even more!
 * Make it an actual module
 * What else you think?
 
 ## Supported inputs
-I used the _Short American_ form [here](https://simple.wikipedia.org/wiki/Names_for_large_numbers)
+I used the __Short American__ form [here](https://simple.wikipedia.org/wiki/Names_for_large_numbers)
 but changing it european wouldn't be so hard! ;)
 
 Example of supported inputs to the function are:
